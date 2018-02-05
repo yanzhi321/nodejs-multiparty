@@ -29,6 +29,7 @@ router.get('/', function(req, res, next){
 	next()
 })
 
+//
 router.get('/profile', function(req, res, next){
 	// res.send('this is inputFile')
 	res.render('user/register', {
@@ -63,13 +64,14 @@ router.post('/profile',   function(req, res, next){
         let path = files.image[0].path
         console.log(name, psd, rpsd, email, phone)
 
-        let patt = 	/^[a-z0-9_-]{3,16}$/
-        if(patt.test(name) == false){
-        	// res.send('err')
-        	res.render('user/success', {
-        		msg: 'success'
-        	})
-        }
+        // let patt = 	/^[a-z0-9_-]{3,16}$/
+        // if(patt.test(name) == false){
+        // 	// res.send('err')
+        // 	res.render('user/success', {
+        // 		msg: 'success',
+        //         host: Host
+        // 	})
+        // }
 
     	//由于在app.js中设置过public为默认路径，所以整理地址时需要去掉public，并且把‘\'变成‘/
      	let resPath =  files.image[0].path.replace(/\\/g, '\/').replace(/public/, '')

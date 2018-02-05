@@ -11,7 +11,7 @@ router.get('/', function(req, res){
 	// res.send(" index of routers folder")
 	//找到views/test.ejs
 	res.render('index', {
-		name: 'table',
+		name: 'index',
 		host: Host
 	})
 })
