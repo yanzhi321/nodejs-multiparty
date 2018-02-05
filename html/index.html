@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>render-html</title>
+</head>
+<body>
+	<div id="container">
+		<p><%= text %></p>
+		<ol class="list">
+			<!-- <li></li> -->
+		</ol>
+	</div>
+	<script>
+
+		const oList = document.querySelector('.list')
+		let arr = []
+		let str = ''
+		for(let i = 0; i<10; i++){
+            arr.push(i)
+            str += `<li>${arr[i]}</li>`
+		}
+		oList.innerHTML = str
+
+	</script>
+</body>
+</html>
