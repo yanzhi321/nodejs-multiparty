@@ -46,7 +46,11 @@
 						</li>
 						<li>
 							<label for="file">上传头像:</label>
-							<input type="file" name="image" id="file">
+							<input type="file" name="image" id="file" onchange="showPreview(this)" />
+
+							<div class="preview">
+								
+							</div>
 						</li>
 
 						<li>
@@ -70,5 +74,31 @@
 			
 		</div>
 	</div>
+
+	<script>
+		
+		const preview = document.querySelector('.preview')
+
+		function showPreview(source) {  
+	        let file = source.files[0];  
+	        if (window.FileReader) {  
+	            let fr = new FileReader();  
+	            fr.onloadend = function(e) {  
+	            	let str = `<img src="${e.target.result}" alt="">`
+	                preview.innerHTML = str 
+	            };  
+
+	            if (file){
+	            	fr.readAsDataURL(file)
+	            } else{
+	            	preview.innerHTML = ''
+	            }
+	            // fr.readAsDataURL(file);  
+	        }  
+	        
+	    } 
+
+	</script>
+
 </body>
 </html>

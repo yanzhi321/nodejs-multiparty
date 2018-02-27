@@ -84,6 +84,13 @@ app.post('/show', function(req, res, next){
     })
 })
 
+//js-upload
+app.get('/imgload', function(req, res){
+    res.render('index5', {
+        title: 'img preview'
+    })
+})
+
 app.listen(3005, function(){
 	console.log('the port is listening at 3005')
 })
