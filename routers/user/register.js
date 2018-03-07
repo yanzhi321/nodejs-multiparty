@@ -78,7 +78,12 @@ router.post('/profile',   function(req, res, next){
      	console.log(resPath)
 
      	res.render('user/showImage', {
-     		title: 'showImage',
+			title: 'showImage',
+			nameS: name,
+			psdS: psd,
+			rpsdS: rpsd,
+			emailS: email,
+			phoneS: phone, 
      		resP: resPath,
      		host: Host
      	})

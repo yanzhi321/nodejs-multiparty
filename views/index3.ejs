@@ -84,7 +84,7 @@
 	        if (window.FileReader) {  
 	            let fr = new FileReader();  
 	            fr.onloadend = function(e) {  
-	            	let str = `<img src="${e.target.result}" alt="">`
+	            	let str = `<img src="${e.target.result}" alt="" width="50" height="50">`
 	                preview.innerHTML = str 
 	            };  
 
